@@ -1,0 +1,39 @@
+// desde src/components/Header -> up two: ../../styles
+@use "../../assets/styles/abstracts" as *;
+
+.header {
+  background: $color-background;
+  border-bottom: 1px solid $color-foreground;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.container {
+  @include container();
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.brand a {
+  text-decoration: none;
+  font-weight: 700;
+  color: $color-foreground;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  a {
+    text-decoration: none;
+    color: $color-foreground;
+    font-weight: 500;
+
+    &:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+  }
+}
