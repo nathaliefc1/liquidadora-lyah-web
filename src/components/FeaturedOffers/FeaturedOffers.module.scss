@@ -1,0 +1,61 @@
+@use "../../assets/styles/abstracts" as *;
+
+.section {
+  padding: 56px 0;
+  background: transparent;
+  color: $color-foreground;
+}
+.inner {
+  @include container();
+}
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+
+  img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .info {
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+    .price {
+      font-weight: 700;
+      color: $success-green;
+    }
+    .note {
+      font-weight: 500;
+      color: $color-foreground; //darken($color-foreground, 10%);
+      margin-left: 6px;
+      font-size: 0.9rem;
+    }
+  }
+}

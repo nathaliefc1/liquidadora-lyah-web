@@ -1,0 +1,139 @@
+@use "../../assets/styles/abstracts" as *;
+
+.section {
+  padding: 48px 0;
+  background: transparent;
+  color: $color-foreground;
+}
+
+.inner {
+  @include container();
+  display: flex;
+  justify-content: center;
+}
+
+/* Card blanca centrada */
+.card {
+  width: 100%;
+  max-width: 720px;
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  color: $color-foreground;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 14px;
+
+  .iconWrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, $color-green, $color-dark-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .title {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 800;
+  }
+}
+
+/* Lista: cada elemento es una fila */
+.list {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Item: label a la izquierda, time a la derecha */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  .label {
+    font-weight: 700;
+    color: $color-foreground;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    margin-right: 12px;
+  }
+
+  .timeWrap {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    justify-content: flex-end;
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  .timeText {
+    font-weight: 700;
+  }
+
+  .separator {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .hSuffix {
+    color: rgba(0, 0, 0, 0.55);
+    font-size: 0.9rem;
+    margin-left: 2px;
+  }
+}
+
+/* Responsive: en pantallas muy pequeñas, permitir que el label se envuelva debajo si hiciera falta */
+@media (max-width: 420px) {
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+
+    .label {
+      font-size: 0.98rem;
+    }
+    .timeWrap {
+      justify-content: flex-start;
+    }
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
+
+/* En pantallas grandes el card puede aumentar padding */
+@media (min-width: 1024px) {
+  .card {
+    padding: 22px;
+    max-width: 900px;
+  }
+}

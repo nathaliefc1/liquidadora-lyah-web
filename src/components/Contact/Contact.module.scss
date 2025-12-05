@@ -1,0 +1,188 @@
+@use "../../assets/styles/abstracts" as *;
+
+.section {
+  padding: 48px 0;
+  background: transparent;
+  color: $color-foreground;
+}
+
+/* ---- TITULO CENTRADO  ---- */
+.title {
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 28px;
+  color: $color-foreground;
+  letter-spacing: -0.5px;
+}
+
+/* Layout general */
+.inner {
+  @include container();
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* ----- MAPA ----- */
+.mapWrap {
+  width: 100%;
+  height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mapLink {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    color: $color-foreground;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.09);
+  }
+}
+
+/* ----- TARJETA BLANCA ----- */
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Header dentro de card */
+.cardHeader {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 8px;
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: $success-green;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .brandName {
+    font-weight: 800;
+  }
+  .brandRut {
+    font-size: 0.95rem;
+    opacity: 0.7;
+  }
+}
+
+/* ----- LISTA DE CONTACTO ----- */
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Cada item */
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  border-radius: 12px;
+  transition: background 0.12s ease, transform 0.12s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.03);
+    transform: translateY(-2px);
+  }
+
+  /* ---- NUEVO: ICONO REDONDO FONDO VERDE CLARO ---- */
+  .iconWrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%; /* redondo */
+    background: rgba(0, 180, 90, 0.18); /* verde claro suave */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $success-green; /* verde "categorías" */
+    flex-shrink: 0;
+
+    svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2.4;
+    }
+  }
+
+  .infoText {
+    font-weight: 600;
+    color: $color-foreground;
+    word-break: break-word;
+  }
+
+  .link {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* Botón WhatsApp */
+.actions {
+  margin-top: 16px;
+}
+
+.whatsappBtn {
+  background: $color-whatsaap;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Tablets y desktop */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 420px;
+    gap: 32px;
+  }
+
+  .mapWrap {
+    height: 420px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mapWrap {
+    height: 480px;
+  }
+}

@@ -1,0 +1,162 @@
+@use "../../assets/styles/abstracts" as *;
+
+.footer {
+  background: $color-dark-bg;
+  color: white;
+  padding: 28px 0;
+  padding-bottom: 40px;
+  font-size: 0.95rem;
+
+  .inner {
+    @include container();
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  /* LEFT (marca + contacto) */
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    .brandBlock {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+
+      .logo {
+        width: 60px;
+        height: 60px;
+        background: $success-green;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .brandTexts {
+        .name {
+          font-weight: 700;
+        }
+        .motto {
+          opacity: 0.95;
+          font-size: 0.95rem;
+        }
+      }
+    }
+
+    .contactBlock {
+      h4 {
+        margin-bottom: 8px;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .address {
+        font-style: normal;
+      }
+      .link {
+        color: $offer-green;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    }
+  }
+
+  /* RIGHT (legal) */
+  .right {
+    h4 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .notice {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      opacity: 0.95;
+      line-height: 1.4;
+    }
+    .small {
+      font-size: 0.88rem;
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+    .links a {
+      color: $offer-green;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+
+  /* Footer bottom row */
+  .bottom {
+    margin-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 12px;
+    @include container();
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .leftBottom {
+    order: 1;
+  }
+  .rightBottom {
+    order: 2;
+  }
+
+  .copy {
+    opacity: 0.85;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .credits {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .creditLink {
+    color: $offer-green;
+    text-decoration: underline;
+  }
+}
+
+/* Tablet: grid 2 columnas -> left (marca+contacto) | right (legal) */
+@media (min-width: 68px) {
+  .footer {
+    .inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    // .bottom {
+    //   flex-direction: row;
+    //   justify-content: space-between;
+    //   align-items: center;
+    // }
+
+    .leftBottom {
+      text-align: left;
+    }
+    .rightBottom {
+      text-align: right;
+    }
+  }
+}
+
+/* Desktop: mantiene 2 columnas pero con tamaños distintos 
+   left más ancho, right más ajustado  */
+@media (min-width: 1024px) {
+  .footer {
+    .inner {
+      grid-template-columns: 1.25fr 1fr;
+    }
+  }
+}

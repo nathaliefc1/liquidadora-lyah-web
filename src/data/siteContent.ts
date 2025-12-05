@@ -70,10 +70,11 @@ export const site = {
   },
   schedule: {
     title: "Horario de atención",
+    subtitle: "Ven a visitarnos o llama para confirmar disponibilidad",
     hours: [
-      "Lunes a viernes: 08:00 - 21:00",
-      "Sábados: 09:00 - 21:00",
-      "Domingos: 09:00 - 17:00",
+      { label: "Lunes a viernes", from: "08:00", to: "21:00" },
+      { label: "Sábados", from: "09:00", to: "21:00" },
+      { label: "Domingos", from: "09:00", to: "17:00" },
     ],
   },
   contact: {
@@ -81,15 +82,25 @@ export const site = {
     mapUrl:
       "https://maps.google.com/?q=Av.+Manuel+Antonio+Matta+1766+Valparaiso",
   },
-  legal: {
+  footer: {
+    motto: '"Precios económicos, precios de locos"',
     copyright: "© 2025 Liquidadora Lyah Ltda. Todos los derechos reservados.",
-    privacy: "Política de privacidad",
+    privacyLabel: "Política de privacidad",
+    legalNotice:
+      "Aviso Legal: El contenido de este sitio web tiene carácter exclusivamente informativo. Liquidadora Lyah Ltda. no realiza ventas ni transacciones en línea por este medio. Todos los precios, promociones y productos publicados están sujetos a disponibilidad en nuestra tienda física ubicada en Av. Matta 1766, Placeres, Valparaíso.",
+    extraNotice:
+      "Los precios y ofertas pueden variar sin previo aviso y son válidos únicamente en el punto de venta físico.",
+    copyrightNotice:
+      "Derechos de propiedas y uso de contenido: Todos los logotipos, imágenes y materiales contenidos en este sitio pertenecen a Liquidadora de Lyah o a sus respectivos titulares. Queda prohibida su reproducción total o parcial sin autorización.",
+  },
+  credits: {
+    text: "Web creada con consciencia por",
+    company: "Zorrobyte",
+    url: "https://zorrobyte.io/",
+  },
+  legal: {
     notice:
       "Aviso Legal: El contenido de este sitio web tiene carácter exclusivamente informativo. Liquidadora Lyah Ltda. no realiza ventas ni transacciones en línea por este medio. Todos los precios, promociones y productos publicados están sujetos a disponibilidad en nuestra tienda física ubicada en Av. Matta 1766, Placeres, Valparaíso.",
-    notice2:
-      "Los precios y ofertas pueden variar sin previo aviso y son válidos únicamente en el punto de venta físico.",
-    notice3:
-      "Derechos de propiedas y uso de contenido: Todos los logotipos, imágenes y materiales contenidos en este sitio pertenecen a Liquidadora de Lyah o a sus respectivos titulares. Queda prohibida su reproducción total o parcial sin autorización.",
   },
 };
 

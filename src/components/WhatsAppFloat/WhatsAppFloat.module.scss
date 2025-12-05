@@ -1,0 +1,26 @@
+@use "../../assets/styles/abstracts" as *;
+
+.float {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  right: 24px;
+  bottom: 24px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+  transition: transform 0.15s ease;
+  &:hover {
+    transform: scale(1.06);
+  }
+}
