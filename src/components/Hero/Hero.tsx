@@ -10,7 +10,8 @@ const Hero: React.FC = () => {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
-  const heroImage = site.hero.images[0] ?? "/images/fachada-1.jpg";
+  const heroImage =
+    site.hero.images[0] ?? "/src/assets/images/fachada/fachada-1";
 
   return (
     <section id="inicio" className={styles.hero}>

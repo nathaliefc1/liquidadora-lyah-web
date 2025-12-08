@@ -15,9 +15,9 @@
 /* Card blanca centrada */
 .card {
   width: 100%;
-  max-width: 720px;
+  max-width: 620px;
   background: white;
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   color: $color-foreground;
@@ -30,7 +30,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 40px;
 
   .iconWrap {
     width: 52px;
@@ -48,7 +48,7 @@
   }
 
   .title {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     margin: 0;
     font-weight: 800;
   }
@@ -69,19 +69,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 12px;
   padding: 12px 14px;
-  border-radius: 10px;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.03);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  }
-
   .label {
     font-weight: 700;
+    font-size: 1.15rem;
     color: $color-foreground;
     flex: 0 0 auto;
     white-space: nowrap;
@@ -91,13 +87,14 @@
   .timeWrap {
     display: inline-flex;
     align-items: baseline;
-    gap: 6px;
+    gap: 10px;
     justify-content: flex-end;
-    color: rgba(0, 0, 0, 0.85);
+    color: $color-green;
   }
 
   .timeText {
-    font-weight: 700;
+    font-weight: 800;
+    font-size: 1.25rem;
   }
 
   .separator {

@@ -20,9 +20,9 @@ export const site = {
     subtitle: "Tu minimarket de confianza en Valparaíso a precios increíbles",
     cta: "Ver ofertas",
     images: [
-      "/images/fachada-1.jpg",
-      "/images/fachada-2.jpg",
-      "/images/fachada-3.jpg",
+      "images/fachada-1.jpg",
+      "images/fachada-2.jpg",
+      "images/fachada-3.jpg",
     ],
   },
   categories: {
