@@ -1,61 +1,89 @@
 @use "../../assets/styles/abstracts" as *;
 
 .section {
-  padding: 56px 0;
+  padding: 40px 0;
   background: transparent;
   color: $color-foreground;
 }
+
 .inner {
   @include container();
 }
+
 .header {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 35px;
+
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 800;
   }
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 16px;
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* lista vertical: una card por fila */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
+/* Cada card ocupa ancho máximo y centro */
 .card {
+  width: 100%;
+  max-width: 620px; /* controla ancho máximo para que no se estire mucho en desktop */
   background: white;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
   display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  flex-direction: column;
+}
+
+/* Media: imagen arriba */
+.media {
+  width: 100%;
+  overflow: hidden;
 
   img {
-    width: 120px;
-    height: 80px;
+    display: block;
+    width: 100%;
+    height: auto; /* permite que la altura varíe */
     object-fit: cover;
-    border-radius: 8px;
   }
+}
 
-  .info {
-    h3 {
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-    .price {
-      font-weight: 700;
-      color: $success-green;
-    }
-    .note {
-      font-weight: 500;
-      color: $color-foreground; //darken($color-foreground, 10%);
-      margin-left: 6px;
-      font-size: 0.9rem;
-    }
-  }
+/* Info: debajo de la imagen */
+.info {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* Price row: old (tachado) + current (verde + bold) */
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.oldPrice {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 0.95rem;
+  text-decoration: line-through;
+}
+
+.currentPrice {
+  color: $success-green;
+  font-weight: 900;
+  font-size: 1.25rem;
 }

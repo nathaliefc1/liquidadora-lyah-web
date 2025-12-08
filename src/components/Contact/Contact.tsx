@@ -97,7 +97,9 @@ const Contact: React.FC = () => {
                 rel="noopener noreferrer"
                 className={styles.whatsappBtn}
               >
-                <MessageCircle />
+                <div className={styles.icon}>
+                  <MessageCircle />
+                </div>
                 <span>Escríbenos por WhatsApp</span>
               </a>
             </div>

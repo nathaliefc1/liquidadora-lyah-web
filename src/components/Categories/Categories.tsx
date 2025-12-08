@@ -2,32 +2,41 @@
 import React from "react";
 import site from "../../data/siteContent";
 import styles from "./Categories.module.scss";
-import {
-  ShoppingCart,
-  Snowflake,
-  Droplet,
-  Coffee,
-  Candy,
-  Package,
-  Heart,
-  Sparkles,
-  Leaf,
-} from "lucide-react";
 
-const iconMap = [
-  ShoppingCart,
-  Package,
-  Snowflake,
-  Leaf,
-  Coffee,
-  Candy,
-  Heart,
-  Sparkles,
-  Droplet,
-];
+// Glob para covers (eager -> se resuelven al inicio para render rápido)
+const coverGlob = import.meta.glob(
+  "/src/assets/images/categories/**/cover.jpg",
+  { eager: true, query: "?url", import: "default" }
+) as Record<string, string>;
+
+const slugify = (s: string) =>
+  s
+    .toString()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "")
+    .replace(/--+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
+
+type Category = { label: string; slug: string };
 
 const Categories: React.FC = () => {
-  const items = site.categories.list;
+  // Normalize data: acepta strings o objetos { label, slug }
+  const raw = site.categories.list;
+  const categories: Category[] = raw.map((r) =>
+    typeof r === "string"
+      ? { label: r, slug: slugify(r) }
+      : { label: r.label, slug: r.slug ?? slugify(r.label) }
+  );
+
+  const getCover = (slug: string) => {
+    const entry = Object.entries(coverGlob).find(([p]) =>
+      p.includes(`/categories/${slug}/`)
+    );
+    return entry ? entry[1] : "";
+  };
+
   return (
     <section id="productos" className={styles.section}>
       <div className={styles.inner}>
@@ -37,14 +46,22 @@ const Categories: React.FC = () => {
         </div>
 
         <div className={styles.grid}>
-          {items.map((name, i) => {
-            const Icon = iconMap[i % iconMap.length];
+          {categories.map((cat) => {
+            const cover = getCover(cat.slug);
             return (
-              <article key={name} className={styles.card}>
-                <div className={styles.iconWrap}>
-                  <Icon />
+              <article key={cat.slug} className={styles.card} aria-hidden>
+                <div className={styles.thumbWrap}>
+                  {cover ? (
+                    <img
+                      src={cover}
+                      alt={cat.label}
+                      className={styles.thumb}
+                      loading="lazy"
+                    />
+                  ) : null}
+                  <div className={styles.thumbOverlay} />
+                  <h3 className={styles.cardTitle}>{cat.label}</h3>
                 </div>
-                <h3>{name}</h3>
               </article>
             );
           })}

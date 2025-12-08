@@ -156,17 +156,31 @@
 /* Botón WhatsApp */
 .actions {
   margin-top: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .whatsappBtn {
   background: $color-whatsaap;
   color: white;
-  padding: 12px 20px;
+  padding: 12px 24px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 700;
-  display: inline-block;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 260px;
+  justify-content: center;
+
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
 }
 
 /* Tablets y desktop */
