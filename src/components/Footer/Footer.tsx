@@ -26,24 +26,25 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className={styles.contactBlock}>
-            <h4 id="footer-heading">Contacto</h4>
-            <address className={styles.address}>
-              <div>{brand.address}</div>
-              <div>
+          {/* CRÉDITOS */}
+          <div className={styles.bottom}>
+            <div className={styles.leftBottom}>
+              <p className={styles.copy}>{footer.copyright}</p>
+            </div>
+
+            <div className={styles.rightBottom}>
+              <p className={styles.credits}>
+                {credits.text}{" "}
                 <a
-                  className={styles.link}
-                  href={`tel:${brand.phone.replace(/\D/g, "")}`}
+                  href={credits.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.creditLink}
                 >
-                  {brand.phone}
+                  {credits.company}
                 </a>
-              </div>
-              <div>
-                <a className={styles.link} href={`mailto:${brand.email}`}>
-                  {brand.email}
-                </a>
-              </div>
-            </address>
+              </p>
+            </div>
           </div>
         </div>
 
@@ -53,30 +54,9 @@ const Footer: React.FC = () => {
           <p className={styles.notice}>{footer.legalNotice}</p>
           <p className={styles.small}>{footer.extraNotice}</p>
 
-          <nav className={styles.links} aria-label="Enlaces legales">
+          {/* <nav className={styles.links} aria-label="Enlaces legales">
             <a href="/terms">{footer.privacyLabel}</a>
-          </nav>
-        </div>
-      </div>
-
-      {/* BOTTOM: copy a la izquierda (desktop) + crédito (izquierda en mobile/center en mobile) */}
-      <div className={styles.bottom}>
-        <div className={styles.leftBottom}>
-          <p className={styles.copy}>{footer.copyright}</p>
-        </div>
-
-        <div className={styles.rightBottom}>
-          <p className={styles.credits}>
-            {credits.text}{" "}
-            <a
-              href={credits.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.creditLink}
-            >
-              {credits.company}
-            </a>
-          </p>
+          </nav> */}
         </div>
       </div>
     </footer>

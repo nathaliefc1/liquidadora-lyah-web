@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import site from "../../data/siteContent";
 import styles from "./Header.module.scss";
-import { MessageSquare } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id);
@@ -33,9 +33,6 @@ const Header: React.FC = () => {
               {item.label}
             </button>
           ))}
-          <Link to="/terms" className={styles.navItem}>
-            Términos
-          </Link>
         </nav>
 
         <button
@@ -48,7 +45,7 @@ const Header: React.FC = () => {
           }
           aria-label="Abrir WhatsApp"
         >
-          <MessageSquare className={styles.icon} />
+          <MessageCircle className={styles.icon} />
           WhatsApp
         </button>
       </div>
