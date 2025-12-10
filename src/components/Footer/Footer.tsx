@@ -2,6 +2,7 @@
 import React from "react";
 import site from "../../data/siteContent";
 import styles from "./Footer.module.scss";
+import logo from "../../../preview.jpeg";
 
 const Footer: React.FC = () => {
   const { footer, brand, credits } = site;
@@ -17,8 +18,10 @@ const Footer: React.FC = () => {
         <div className={styles.left}>
           <div className={styles.brandBlock}>
             <div className={styles.logo} aria-hidden>
-              {" "}
-              L{" "}
+              <img
+                src={logo}
+                alt="Liquidadora Lyah Ltda – Abarrotes y productos de primera necesidad a precios económicos en Valparaíso"
+              />
             </div>
             <div className={styles.brandTexts}>
               <div className={styles.name}>{brand.legal}</div>
